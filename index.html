@@ -1,1005 +1,827 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy Birthday Shahnash Ayisha ❤️</title>
-<meta name="theme-color" content="#c92f5b">
-
-<style>
-*{box-sizing:border-box}
-
-html{
-scroll-behavior:smooth
-}
-
-body{
-margin:0;
-font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-background:#fff6f8;
-color:#35151f;
-overflow-x:hidden
-}
-
-a{
-text-decoration:none;
-color:inherit
-}
-
-/* ================= NAV ================= */
-
-.nav{
-position:fixed;
-top:0;
-left:0;
-right:0;
-z-index:100;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:16px 6%;
-background:rgba(255,246,248,.75);
-backdrop-filter:blur(12px);
-border-bottom:1px solid #ffffff99
-}
-
-.brand{
-font-size:22px;
-font-weight:800;
-color:#c92f5b
-}
-
-.navlinks{
-display:flex;
-gap:20px;
-font-size:13px;
-font-weight:700
-}
-
-.navlinks a:hover{
-color:#c92f5b
-}
-
-/* ================= HERO ================= */
-
-.hero{
-min-height:100vh;
-padding:105px 6% 60px;
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-gap:40px;
-background:
-radial-gradient(circle at 15% 30%,#ffd9e4 0 18%,transparent 38%),
-radial-gradient(circle at 90% 10%,#ffe4c9 0 15%,transparent 38%),
-linear-gradient(135deg,#fff7f8,#ffe8ee)
-}
-
-.kicker{
-letter-spacing:3px;
-text-transform:uppercase;
-font-size:12px;
-font-weight:800;
-color:#c92f5b
-}
-
-.hero h1{
-font-family:Georgia,serif;
-font-size:clamp(50px,7vw,92px);
-line-height:.95;
-margin:15px 0;
-color:#b5234c
-}
-
-.hero h2{
-font-family:Georgia,serif;
-font-size:clamp(28px,4vw,52px);
-margin:0 0 18px;
-font-style:italic
-}
-
-.hero p{
-font-size:18px;
-line-height:1.7;
-max-width:620px
-}
-
-/* ================= BUTTON ================= */
-
-.btn{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:14px 22px;
-border-radius:999px;
-background:#c92f5b;
-color:#fff;
-font-weight:800;
-box-shadow:0 10px 30px #c92f5b44;
-margin-top:10px;
-border:0;
-cursor:pointer
-}
-
-.music{
-margin-left:10px;
-background:#fff;
-color:#c92f5b;
-border:2px solid #c92f5b;
-box-shadow:none
-}
-
-/* ================= PREMIUM HERO IMAGE ================= */
-
-.hero-photo{
-position:relative;
-width:100%;
-border-radius:38px;
-padding:10px;
-background:linear-gradient(135deg,#ffffff,#ffd2df,#fff);
-box-shadow:
-0 30px 70px #7c234344,
-0 0 45px #ff5d8d33;
-overflow:hidden;
-transform:rotate(1deg);
-animation:heroFloat 5s ease-in-out infinite
-}
-
-.hero-photo::before{
-content:"";
-position:absolute;
-inset:-50%;
-background:linear-gradient(
-115deg,
-transparent 40%,
-rgba(255,255,255,.8) 50%,
-transparent 60%
-);
-animation:shine 5s infinite;
-z-index:2;
-pointer-events:none
-}
-
-.hero-photo img{
-display:block;
-width:100%;
-height:680px;
-object-fit:cover;
-border-radius:30px;
-animation:slowZoom 9s ease-in-out infinite alternate
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-padding:90px 6%;
-position:relative
-}
-
-.sectiontitle{
-text-align:center;
-font-family:Georgia,serif;
-font-size:46px;
-color:#b5234c;
-margin:0 0 12px
-}
-
-.sub{
-text-align:center;
-max-width:700px;
-margin:0 auto 45px;
-color:#6c4c55
-}
-
-/* ================= STORY ================= */
-
-.story{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-max-width:1100px;
-margin:auto
-}
-
-.card{
-background:#fff;
-border:1px solid #f3d4dc;
-border-radius:24px;
-padding:28px;
-text-align:center;
-box-shadow:0 12px 35px #7c234310;
-transition:.35s
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 45px #7c234330
-}
-
-.icon{
-font-size:32px
-}
-
-.card h3{
-color:#b5234c
-}
-
-/* ================= GALLERY ================= */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-max-width:1100px;
-margin:auto
-}
-
-.photo-card{
-position:relative;
-height:430px;
-padding:8px;
-border-radius:28px;
-background:linear-gradient(
-135deg,
-#fff,
-#ffd0dd,
-#fff,
-#f7b4c8
-);
-box-shadow:
-0 20px 45px #7c234330,
-0 0 35px #ff5d8d22;
-overflow:hidden;
-transition:.5s
-}
-
-.photo-card::before{
-content:"";
-position:absolute;
-inset:-100%;
-background:linear-gradient(
-120deg,
-transparent 42%,
-rgba(255,255,255,.85) 50%,
-transparent 58%
-);
-transform:rotate(15deg);
-transition:.5s;
-z-index:2;
-pointer-events:none
-}
-
-.photo-card:hover::before{
-animation:galleryShine 1.2s ease
-}
-
-.photo-card:hover{
-transform:translateY(-12px) rotate(-1deg) scale(1.02);
-box-shadow:
-0 30px 65px #7c234355,
-0 0 45px #ff5d8d44
-}
-
-.photo-card img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:21px;
-display:block;
-transition:1s;
-filter:saturate(1.05) contrast(1.03)
-}
-
-.photo-card:hover img{
-transform:scale(1.08)
-}
-
-/* ================= PROPOSAL ================= */
-
-.proposal{
-background:
-radial-gradient(circle at 70% 35%,#8e1835,#3b0714 55%,#190309);
-color:#fff;
-overflow:hidden
-}
-
-.proposal:before{
-content:"";
-position:absolute;
-inset:0;
-background-image:radial-gradient(#fff8 1px,transparent 1px);
-background-size:30px 30px;
-opacity:.16
-}
-
-.proposal .inner{
-position:relative;
-z-index:1;
-max-width:1050px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-gap:50px
-}
-
-.proposal h2{
-font-family:Georgia,serif;
-font-size:clamp(42px,6vw,72px);
-font-style:italic;
-margin:0 0 15px;
-color:#ffd7e1
-}
-
-.proposal p{
-font-size:18px;
-line-height:1.7
-}
-
-/* ================= RING ================= */
-
-.ring{
-width:100%;
-aspect-ratio:1;
-border-radius:50%;
-border:3px solid #ff6f99;
-box-shadow:
-0 0 50px #ff3d73aa,
-inset 0 0 50px #ff3d7355;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:110px;
-background:#ffffff08;
-animation:ringGlow 3s ease-in-out infinite
-}
-
-/* ================= BUTTONS ================= */
-
-.actions{
-display:flex;
-gap:15px;
-flex-wrap:wrap
-}
-
-.yes,.no{
-border:0;
-cursor:pointer;
-font-size:16px
-}
-
-.yes{
-background:#ff2d6f
-}
-
-.no{
-background:#fff;
-color:#5d2333
-}
-
-/* ================= PROMISE ================= */
-
-.promise{
-background:#fff
-}
-
-.promisebox{
-max-width:800px;
-margin:auto;
-text-align:center;
-font-size:20px;
-line-height:1.8
-}
-
-.signature{
-font-family:Georgia,serif;
-font-size:34px;
-color:#b5234c
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-text-align:center;
-padding:25px;
-background:#b5234c;
-color:#fff;
-font-size:14px
-}
-
-/* ================= HEARTS ================= */
-
-.heart{
-position:fixed;
-bottom:-30px;
-pointer-events:none;
-animation:float 7s linear forwards;
-z-index:200
-}
-
-.confetti{
-position:fixed;
-top:-20px;
-width:9px;
-height:16px;
-z-index:500;
-animation:fall 3s linear forwards
-}
-
-/* ================= ANIMATIONS ================= */
-
-@keyframes heroFloat{
-0%,100%{
-transform:rotate(1deg) translateY(0)
-}
-50%{
-transform:rotate(1deg) translateY(-12px)
-}
-}
-
-@keyframes slowZoom{
-0%{
-transform:scale(1)
-}
-100%{
-transform:scale(1.06)
-}
-}
-
-@keyframes shine{
-0%{
-transform:translateX(-100%) rotate(15deg)
-}
-100%{
-transform:translateX(100%) rotate(15deg)
-}
-}
-
-@keyframes galleryShine{
-0%{
-transform:translate(-40%,-40%) rotate(15deg)
-}
-100%{
-transform:translate(40%,40%) rotate(15deg)
-}
-}
-
-@keyframes ringGlow{
-0%,100%{
-transform:scale(1);
-box-shadow:
-0 0 50px #ff3d73aa,
-inset 0 0 50px #ff3d7355
-}
-50%{
-transform:scale(1.03);
-box-shadow:
-0 0 80px #ff3d73cc,
-inset 0 0 70px #ff3d7377
-}
-}
-
-@keyframes float{
-to{
-transform:translateY(-110vh) rotate(540deg);
-opacity:0
-}
-}
-
-@keyframes fall{
-to{
-transform:translateY(110vh) rotate(720deg);
-opacity:0
-}
-}
-
-/* ================= TABLET ================= */
-
-@media(max-width:800px){
-
-.navlinks{
-display:none
-}
-
-.hero{
-grid-template-columns:1fr;
-padding-top:90px
-}
-
-.hero-photo img{
-height:560px
-}
-
-.story{
-grid-template-columns:1fr 1fr
-}
-
-.gallery{
-grid-template-columns:1fr
-}
-
-.photo-card{
-height:450px
-}
-
-.proposal .inner{
-grid-template-columns:1fr
-}
-
-.ring{
-max-width:360px;
-margin:auto
-}
-
-.sectiontitle{
-font-size:38px
-}
-
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:480px){
-
-.story{
-grid-template-columns:1fr
-}
-
-.hero h1{
-font-size:55px
-}
-
-.btn{
-width:100%;
-justify-content:center
-}
-
-.music{
-margin-left:0
-}
-
-.hero-photo img{
-height:500px
-}
-
-.photo-card{
-height:420px
-}
-
-}
-
-/* ================= REDUCED MOTION ================= */
-
-@media(prefers-reduced-motion:reduce){
-
-*{
-animation:none!important;
-transition:none!important
-}
-
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Shahnash Ayisha ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fff);
+            color: #5a2942;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 70px);
+            margin-bottom: 25px;
+            color: #c2185b;
+            animation: titleGlow 2s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           HERO IMAGE EFFECT
+        ========================= */
+
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow:
+                0 0 20px rgba(194, 24, 91, 0.35),
+                0 0 50px rgba(194, 24, 91, 0.2);
+
+            animation:
+                floatingPhoto 4s ease-in-out infinite,
+                photoZoom 5s ease-in-out infinite alternate;
+
+            position: relative;
+        }
+
+        @keyframes floatingPhoto {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes photoZoom {
+            0% {
+                box-shadow:
+                    0 0 20px rgba(194, 24, 91, 0.3),
+                    0 0 40px rgba(194, 24, 91, 0.15);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 35px rgba(194, 24, 91, 0.6),
+                    0 0 70px rgba(194, 24, 91, 0.3);
+            }
+        }
+
+        @keyframes titleGlow {
+            from {
+                text-shadow: 0 0 5px rgba(194, 24, 91, 0.2);
+            }
+
+            to {
+                text-shadow: 0 0 25px rgba(194, 24, 91, 0.6);
+            }
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background: #e91e63;
+            color: white;
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
+        }
+
+        .yes:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 30px rgba(233, 30, 99, 0.5);
+        }
+
+        .no {
+            background: #777;
+            color: white;
+            position: relative;
+        }
+
+        .music {
+            background: #9c27b0;
+            color: white;
+            box-shadow: 0 8px 20px rgba(156, 39, 176, 0.3);
+        }
+
+        .music:hover {
+            transform: scale(1.06);
+        }
+
+        /* =========================
+           NO BUTTON EFFECT
+        ========================= */
+
+        .no-shake {
+            animation: noShake 0.5s;
+        }
+
+        @keyframes noShake {
+            0% {
+                transform: translateX(0) rotate(0);
+            }
+
+            20% {
+                transform: translateX(-15px) rotate(-8deg);
+            }
+
+            40% {
+                transform: translateX(15px) rotate(8deg);
+            }
+
+            60% {
+                transform: translateX(-12px) rotate(-6deg);
+            }
+
+            80% {
+                transform: translateX(12px) rotate(6deg);
+            }
+
+            100% {
+                transform: translateX(0) rotate(0);
+            }
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 35px;
+            color: #c2185b;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 6px solid white;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+            animation:
+                galleryFloat 4s ease-in-out infinite,
+                galleryZoom 5s ease-in-out infinite alternate;
+
+            transition: 0.4s;
+        }
+
+        .gallery img:nth-child(2) {
+            animation-delay: 0.7s;
+        }
+
+        .gallery img:nth-child(3) {
+            animation-delay: 1.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes galleryFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes galleryZoom {
+            0% {
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            }
+
+            100% {
+                box-shadow: 0 15px 40px rgba(194,24,91,0.3);
+            }
+        }
+
+        /* =========================
+           VIDEO SECTION
+        ========================= */
+
+        .video-section {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .video-box {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+
+            padding: 10px;
+
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #ffe4ec,
+                #ffffff
+            );
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 15px 40px rgba(194,24,91,0.2),
+                0 0 30px rgba(194,24,91,0.12);
+
+            animation: videoGlow 3s ease-in-out infinite alternate;
+        }
+
+        .birthday-video {
+            width: 100%;
+            display: block;
+            border-radius: 18px;
+            background: #000;
+        }
+
+        @keyframes videoGlow {
+            from {
+                box-shadow:
+                    0 15px 40px rgba(194,24,91,0.15);
+            }
+
+            to {
+                box-shadow:
+                    0 20px 55px rgba(194,24,91,0.35);
+            }
+        }
+
+        .video-caption {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           PROPOSAL
+        ========================= */
+
+        .proposal {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .proposal h2 {
+            font-size: clamp(30px, 5vw, 50px);
+        }
+
+        .proposal-text {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           HEART EFFECT
+        ========================= */
+
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            font-size: 25px;
+            animation: heartFall 4s linear forwards;
+            z-index: 9999;
+        }
+
+        @keyframes heartFall {
+            0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           NO MESSAGE
+        ========================= */
+
+        #noMessage {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #e91e63;
+            min-height: 30px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            font-size: 16px;
+            color: #8b4965;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .hero-image {
+                width: 230px;
+                height: 230px;
+            }
+
+            .gallery img {
+                height: 300px;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+
+            .video-box {
+                padding: 6px;
+                border-radius: 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= NAV ================= -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
-<nav class="nav">
+    <section class="hero">
 
-<div class="brand">
-Our Love ❤️
-</div>
+        <h1>Happy Birthday Shahnash Ayisha ❤️</h1>
 
-<div class="navlinks">
-<a href="#story">OUR STORY</a>
-<a href="#gallery">GALLERY</a>
-<a href="#proposal">PROPOSAL</a>
-</div>
+        <p>
+            To the most beautiful person in my life 💕
+        </p>
 
-</nav>
+        <img
+            src="ASSETS/memory-2.jpg"
+            alt="Shahnash Ayisha"
+            class="hero-image"
+        >
 
+        <div style="margin-top:25px;">
 
-<!-- ================= HERO ================= -->
+            <button
+                class="btn music"
+                onclick="toggleVideo()"
+                id="musicButton"
+            >
+                🎵 Play Birthday Video
+            </button>
 
-<header class="hero">
+        </div>
 
-<div>
+    </section>
 
-<div class="kicker">
-04 September • Your Special Day ✨
-</div>
 
-<h1>
-Happy Birthday
-</h1>
+    <!-- =========================
+         MEMORY GALLERY
+    ========================= -->
 
-<h2>
-Shahnash Ayisha ❤️
-</h2>
+    <section>
 
-<p>
-You are not just a part of my life… you are one of the most beautiful reasons my life feels complete. Today is your day, and I just want you to know how deeply you are loved.
-</p>
+        <h2>Our Beautiful Memories ❤️</h2>
 
-<a class="btn" href="#proposal">
-💗 My Birthday Surprise
-</a>
+        <div class="gallery">
 
-<a
-class="btn music"
-target="_blank"
-rel="noopener"
-href="https://www.youtube.com/watch?v=07EiePQcg0o">
+            <img
+                src="ASSETS/memory-1.jpg"
+                alt="Our Memory 1"
+            >
 
-🎵 ஏன் என்றால் உன் பிறந்தநாள்
+            <img
+                src="ASSETS/memory-2.jpg"
+                alt="Our Memory 2"
+            >
 
-</a>
+            <img
+                src="ASSETS/memory-3.jpg"
+                alt="Our Memory 3"
+            >
 
-</div>
+        </div>
 
+    </section>
 
-<!-- HERO IMAGE -->
 
-<div class="hero-photo">
+    <!-- =========================
+         VIDEO
+    ========================= -->
 
-<img
-src="ASSETS/memory-2.jpg"
-alt="Our special memory"
-loading="eager">
+    <section>
 
-</div>
+        <div class="video-section">
 
-</header>
+            <h2>🎬 Our Special Video ❤️</h2>
 
+            <div class="video-box">
 
-<!-- ================= STORY ================= -->
+                <video
+                    id="birthdayVideo"
+                    class="birthday-video"
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
 
-<section id="story">
+                    <source
+                        src="ASSETS/birthday-video.mp4"
+                        type="video/mp4"
+                    >
 
-<h2 class="sectiontitle">
-Our Story 💕
-</h2>
+                    Your browser does not support HTML5 video.
 
-<p class="sub">
-Every love story is beautiful, but ours is my favourite.
-</p>
+                </video>
 
-<div class="story">
+            </div>
 
-<div class="card">
+            <p class="video-caption">
+                Every moment with you is a beautiful memory. ❤️
+                <br>
+                Happy Birthday, my love! 🥰
+            </p>
 
-<div class="icon">
-👫
-</div>
+        </div>
 
-<h3>
-First Meet
-</h3>
+    </section>
 
-<p>
-The day our paths crossed, something special began.
-</p>
 
-</div>
+    <!-- =========================
+         PROPOSAL
+    ========================= -->
 
+    <section class="proposal">
 
-<div class="card">
+        <h2>
+            Shahnash Ayisha,
+            <br>
+            Will You Be Mine Forever? 💍❤️
+        </h2>
 
-<div class="icon">
-❤️
-</div>
+        <p class="proposal-text">
+            I want to spend every beautiful moment of my life with you. ❤️
+        </p>
 
-<h3>
-Special Bond
-</h3>
+        <div>
 
-<p>
-Little by little, you became my favourite person.
-</p>
+            <button
+                class="btn yes"
+                onclick="sayYes()"
+            >
+                YES ❤️
+            </button>
 
-</div>
+            <button
+                class="btn no"
+                id="noButton"
+                onclick="moveNo()"
+            >
+                NO 😢
+            </button>
 
+        </div>
 
-<div class="card">
+        <div id="noMessage"></div>
 
-<div class="icon">
-✨
-</div>
+    </section>
 
-<h3>
-Beautiful Moments
-</h3>
 
-<p>
-Every memory with you is something I want to treasure.
-</p>
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-</div>
+    <footer>
 
+        Made with ❤️ specially for Shahnash Ayisha
 
-<div class="card">
+    </footer>
 
-<div class="icon">
-♾️
-</div>
 
-<h3>
-Forever & Always
-</h3>
+    <script>
 
-<p>
-More memories, more smiles, and a lifetime together.
-</p>
+        /* =========================
+           VIDEO PLAY / PAUSE
+        ========================= */
 
-</div>
+        function toggleVideo() {
 
-</div>
+            const video =
+                document.getElementById("birthdayVideo");
 
-</section>
+            const button =
+                document.getElementById("musicButton");
 
+            if (video.paused) {
 
-<!-- ================= GALLERY ================= -->
+                video.play();
 
-<section id="gallery">
+                button.innerHTML =
+                    "⏸️ Pause Birthday Video";
 
-<h2 class="sectiontitle">
-Our Beautiful Moments 📸
-</h2>
+                video.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
 
-<p class="sub">
-Three memories, one love, countless reasons to smile.
-</p>
+            } else {
 
+                video.pause();
 
-<div class="gallery">
+                button.innerHTML =
+                    "🎵 Play Birthday Video";
+            }
+        }
 
 
-<div class="photo-card">
+        /* =========================
+           VIDEO BUTTON UPDATE
+        ========================= */
 
-<img
-src="ASSETS/memory-1.jpg"
-alt="Our memory 1"
-loading="lazy">
+        const birthdayVideo =
+            document.getElementById("birthdayVideo");
 
-</div>
+        birthdayVideo.addEventListener("play", function() {
 
+            document.getElementById("musicButton").innerHTML =
+                "⏸️ Pause Birthday Video";
 
-<div class="photo-card">
+        });
 
-<img
-src="ASSETS/memory-2.jpg"
-alt="Our wedding memory"
-loading="lazy">
+        birthdayVideo.addEventListener("pause", function() {
 
-</div>
+            document.getElementById("musicButton").innerHTML =
+                "🎵 Play Birthday Video";
 
+        });
 
-<div class="photo-card">
 
-<img
-src="ASSETS/memory-3.jpg"
-alt="Our memory 3"
-loading="lazy">
+        /* =========================
+           YES BUTTON
+        ========================= */
 
-</div>
+        function sayYes() {
 
+            const message =
+                document.getElementById("noMessage");
 
-</div>
+            message.innerHTML =
+                "Yayyy! ❤️ I Love You So Much! 🥰💍❤️";
 
-</section>
+            createHearts();
 
+            for (let i = 0; i < 30; i++) {
 
-<!-- ================= PROPOSAL ================= -->
+                setTimeout(() => {
+                    createHeart();
+                }, i * 100);
 
-<section id="proposal" class="proposal">
+            }
 
-<div class="inner">
+        }
 
-<div>
 
-<div
-class="kicker"
-style="color:#ff9bb7">
+        /* =========================
+           NO BUTTON EFFECT
+        ========================= */
 
-A question from my heart
+        function moveNo() {
 
-</div>
+            const button =
+                document.getElementById("noButton");
 
-<h2>
-Shahnash Ayisha,
-<br>
-will you be mine forever? 💍
-</h2>
+            const message =
+                document.getElementById("noMessage");
 
-<p>
-You are my happiness, my peace, my favourite person, and the one I want beside me through every chapter of life.
-</p>
+            button.classList.remove("no-shake");
 
-<div class="actions">
+            void button.offsetWidth;
 
-<button
-class="btn yes"
-onclick="sayYes()">
+            button.classList.add("no-shake");
 
-❤️ Yes! Always
+            const messages = [
 
-</button>
+                "No button work aagadhu 😜❤️",
 
-<button
-class="btn no"
-id="noBtn"
-onclick="moveNo()">
+                "Please Yes sollu 🥺❤️",
 
-No 😢
+                "Don't break my heart 💔🥺",
 
-</button>
+                "One more chance please 😭❤️",
 
-</div>
+                "YES button dhaan correct 😍",
 
-</div>
+                "You can't escape from me 😜❤️"
 
+            ];
 
-<div class="ring">
-💍
-</div>
+            const random =
+                Math.floor(Math.random() * messages.length);
 
-</div>
+            message.innerHTML =
+                messages[random];
 
-</section>
+            /* Move button */
 
+            setTimeout(() => {
 
-<!-- ================= PROMISE ================= -->
+                const maxX =
+                    Math.max(
+                        20,
+                        window.innerWidth - button.offsetWidth - 40
+                    );
 
-<section class="promise">
+                const maxY =
+                    Math.max(
+                        20,
+                        window.innerHeight - button.offsetHeight - 40
+                    );
 
-<h2 class="sectiontitle">
-My Promise To You 💌
-</h2>
+                const x =
+                    Math.random() * maxX - (maxX / 2);
 
-<div class="promisebox">
+                const y =
+                    Math.random() * maxY - (maxY / 2);
 
-<p>
-I promise to stand beside you, respect you, support your dreams, celebrate your happiness, and keep choosing you every day.
-</p>
+                button.style.transform =
+                    `translate(${x}px, ${y}px)`;
 
-<p>
-Thank you for being you. May this birthday be the beginning of another beautiful year of our life together.
-</p>
+            }, 300);
 
-<div class="signature">
+            /* Broken hearts */
 
-Yours always,
-<br>
+            for (let i = 0; i < 8; i++) {
 
-<strong>
-Syed Yasar ❤️
-</strong>
+                setTimeout(() => {
 
-</div>
+                    const heart =
+                        document.createElement("div");
 
-</div>
+                    heart.innerHTML =
+                        Math.random() > 0.5
+                        ? "💔"
+                        : "😭";
 
-</section>
+                    heart.className =
+                        "heart";
 
+                    heart.style.left =
+                        Math.random() * 100 + "vw";
 
-<!-- ================= FOOTER ================= -->
+                    heart.style.top =
+                        "50vh";
 
-<footer>
+                    heart.style.fontSize =
+                        (20 + Math.random() * 20) + "px";
 
-Made with endless love by Syed Yasar for Shahnash Ayisha • 04 September ✨
+                    document.body.appendChild(heart);
 
-</footer>
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
 
+                }, i * 100);
 
-<!-- ================= JAVASCRIPT ================= -->
+            }
 
-<script>
+        }
 
-function hearts(n=18){
 
-for(let i=0;i<n;i++){
+        /* =========================
+           HEARTS
+        ========================= */
 
-let e=document.createElement('div');
+        function createHeart() {
 
-e.className='heart';
+            const heart =
+                document.createElement("div");
 
-e.textContent=[
-'❤️',
-'💗',
-'💕',
-'💖',
-'🌹'
-][Math.floor(Math.random()*5)];
+            heart.className =
+                "heart";
 
-e.style.left=Math.random()*100+'vw';
+            heart.innerHTML =
+                Math.random() > 0.3
+                ? "❤️"
+                : "💖";
 
-e.style.fontSize=
-(16+Math.random()*25)+'px';
+            heart.style.left =
+                Math.random() * 100 + "vw";
 
-e.style.animationDuration=
-(4+Math.random()*4)+'s';
+            heart.style.top =
+                "-30px";
 
-document.body.appendChild(e);
+            heart.style.fontSize =
+                (20 + Math.random() * 25) + "px";
 
-setTimeout(()=>{
-e.remove();
-},8000);
+            document.body.appendChild(heart);
 
-}
+            setTimeout(() => {
 
-}
+                heart.remove();
 
+            }, 4000);
 
-function confetti(){
+        }
 
-for(let i=0;i<90;i++){
 
-let e=document.createElement('div');
+        function createHearts() {
 
-e.className='confetti';
+            for (let i = 0; i < 20; i++) {
 
-e.textContent='❤️';
+                setTimeout(() => {
 
-e.style.left=
-Math.random()*100+'vw';
+                    createHeart();
 
-e.style.fontSize=
-(8+Math.random()*14)+'px';
+                }, i * 150);
 
-e.style.animationDelay=
-(Math.random()*1.2)+'s';
+            }
 
-document.body.appendChild(e);
+        }
 
-setTimeout(()=>{
-e.remove();
-},4500);
 
-}
+        /* =========================
+           BACKGROUND HEARTS
+        ========================= */
 
-}
+        setInterval(() => {
 
+            createHeart();
 
-function sayYes(){
+        }, 2500);
 
-confetti();
-
-hearts(35);
-
-setTimeout(()=>{
-
-alert(
-'You just made my heart the happiest! ❤️\n\nForever yours — Syed Yasar 💍'
-);
-
-},250);
-
-}
-
-
-function moveNo(){
-
-const b=document.getElementById('noBtn');
-
-b.style.position='fixed';
-
-b.style.left=
-(10+Math.random()*75)+'vw';
-
-b.style.top=
-(15+Math.random()*70)+'vh';
-
-}
-
-
-setInterval(()=>{
-
-hearts(1);
-
-},1800);
-
-</script>
+    </script>
 
 </body>
 </html>
+```
