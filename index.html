@@ -1,788 +1,902 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Happy Birthday Shahnash Ayisha ❤️</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Segoe UI", sans-serif;
-            background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fff);
-            color: #5a2942;
-            overflow-x: hidden;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(35px, 6vw, 70px);
-            margin-bottom: 25px;
-            color: #c2185b;
-            animation: titleGlow 2s infinite alternate;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 25px;
-        }
-
-        /* =========================
-           HERO IMAGE EFFECT
-        ========================= */
-
-        .hero-image {
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 8px solid white;
-            box-shadow:
-                0 0 20px rgba(194, 24, 91, 0.35),
-                0 0 50px rgba(194, 24, 91, 0.2);
-
-            animation:
-                floatingPhoto 4s ease-in-out infinite,
-                photoZoom 5s ease-in-out infinite alternate;
-
-            position: relative;
-        }
-
-        @keyframes floatingPhoto {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        @keyframes photoZoom {
-            0% {
-                box-shadow:
-                    0 0 20px rgba(194, 24, 91, 0.3),
-                    0 0 40px rgba(194, 24, 91, 0.15);
-            }
-
-            100% {
-                box-shadow:
-                    0 0 35px rgba(194, 24, 91, 0.6),
-                    0 0 70px rgba(194, 24, 91, 0.3);
-            }
-        }
-
-        @keyframes titleGlow {
-            from {
-                text-shadow: 0 0 5px rgba(194, 24, 91, 0.2);
-            }
-
-            to {
-                text-shadow: 0 0 25px rgba(194, 24, 91, 0.6);
-            }
-        }
-
-        /* =========================
-           BUTTONS
-        ========================= */
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            margin: 10px;
-            border: none;
-            border-radius: 30px;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .yes {
-            background: #e91e63;
-            color: white;
-            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
-        }
-
-        .yes:hover {
-            transform: scale(1.08);
-            box-shadow: 0 12px 30px rgba(233, 30, 99, 0.5);
-        }
-
-        .no {
-            background: #777;
-            color: white;
-            position: relative;
-        }
-
-        .music {
-            background: #9c27b0;
-            color: white;
-            box-shadow: 0 8px 20px rgba(156, 39, 176, 0.3);
-        }
-
-        .music:hover {
-            transform: scale(1.06);
-        }
-
-        /* =========================
-           NO BUTTON EFFECT
-        ========================= */
-
-        .no-shake {
-            animation: noShake 0.5s;
-        }
-
-        @keyframes noShake {
-            0% {
-                transform: translateX(0) rotate(0);
-            }
-
-            20% {
-                transform: translateX(-15px) rotate(-8deg);
-            }
-
-            40% {
-                transform: translateX(15px) rotate(8deg);
-            }
-
-            60% {
-                transform: translateX(-12px) rotate(-6deg);
-            }
-
-            80% {
-                transform: translateX(12px) rotate(6deg);
-            }
-
-            100% {
-                transform: translateX(0) rotate(0);
-            }
-        }
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 35px;
-            color: #c2185b;
-            margin-bottom: 30px;
-        }
-
-        /* =========================
-           GALLERY
-        ========================= */
-
-        .gallery {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 330px;
-            object-fit: cover;
-            border-radius: 20px;
-            border: 6px solid white;
-
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-
-            animation:
-                galleryFloat 4s ease-in-out infinite,
-                galleryZoom 5s ease-in-out infinite alternate;
-
-            transition: 0.4s;
-        }
-
-        .gallery img:nth-child(2) {
-            animation-delay: 0.7s;
-        }
-
-        .gallery img:nth-child(3) {
-            animation-delay: 1.4s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        @keyframes galleryFloat {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes galleryZoom {
-            0% {
-                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            }
-
-            100% {
-                box-shadow: 0 15px 40px rgba(194,24,91,0.3);
-            }
-        }
-
-        /* =========================
-           VIDEO SECTION
-        ========================= */
-
-        .video-section {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .video-box {
-            width: 100%;
-            max-width: 850px;
-            margin: 0 auto;
-
-            padding: 10px;
-
-            background: linear-gradient(
-                135deg,
-                #ffffff,
-                #ffe4ec,
-                #ffffff
-            );
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 15px 40px rgba(194,24,91,0.2),
-                0 0 30px rgba(194,24,91,0.12);
-
-            animation: videoGlow 3s ease-in-out infinite alternate;
-        }
-
-        .birthday-video {
-            width: 100%;
-            display: block;
-            border-radius: 18px;
-            background: #000;
-        }
-
-        @keyframes videoGlow {
-            from {
-                box-shadow:
-                    0 15px 40px rgba(194,24,91,0.15);
-            }
-
-            to {
-                box-shadow:
-                    0 20px 55px rgba(194,24,91,0.35);
-            }
-        }
-
-        .video-caption {
-            margin-top: 20px;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        /* =========================
-           PROPOSAL
-        ========================= */
-
-        .proposal {
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .proposal h2 {
-            font-size: clamp(30px, 5vw, 50px);
-        }
-
-        .proposal-text {
-            font-size: 22px;
-            margin-bottom: 25px;
-        }
-
-        /* =========================
-           HEART EFFECT
-        ========================= */
-
-        .heart {
-            position: fixed;
-            pointer-events: none;
-            font-size: 25px;
-            animation: heartFall 4s linear forwards;
-            z-index: 9999;
-        }
-
-        @keyframes heartFall {
-            0% {
-                transform: translateY(-20px) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* =========================
-           NO MESSAGE
-        ========================= */
-
-        #noMessage {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #e91e63;
-            min-height: 30px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 30px;
-            text-align: center;
-            font-size: 16px;
-            color: #8b4965;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 600px) {
-
-            .hero-image {
-                width: 230px;
-                height: 230px;
-            }
-
-            .gallery img {
-                height: 300px;
-            }
-
-            section {
-                padding: 50px 15px;
-            }
-
-            .video-box {
-                padding: 6px;
-                border-radius: 18px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Shahnash Ayisha ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Segoe UI, Arial, sans-serif;
+    background:linear-gradient(135deg,#fff0f5,#ffe4ec,#fff);
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND HEARTS ================= */
+
+.bg-heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:22px;
+    opacity:.5;
+    pointer-events:none;
+    animation:floatBg 7s linear forwards;
+    z-index:1;
+}
+
+@keyframes floatBg{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    15%{
+        opacity:.6;
+    }
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px 20px;
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,75px);
+    color:#e91e63;
+    margin-bottom:15px;
+    text-shadow:0 0 15px rgba(233,30,99,.25);
+    animation:titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow{
+    from{
+        text-shadow:0 0 8px rgba(233,30,99,.2);
+    }
+    to{
+        text-shadow:
+        0 0 15px rgba(233,30,99,.45),
+        0 0 30px rgba(255,105,150,.3);
+    }
+}
+
+.hero p{
+    font-size:20px;
+    color:#777;
+    margin-bottom:30px;
+}
+
+/* ================= HERO IMAGE ================= */
+
+.hero-photo{
+    width:min(330px,80vw);
+    height:min(430px,105vw);
+    object-fit:cover;
+    border-radius:25px;
+    border:6px solid white;
+    box-shadow:
+        0 15px 45px rgba(233,30,99,.25),
+        0 0 25px rgba(255,105,150,.35);
+
+    animation:
+        photoFloat 4s ease-in-out infinite,
+        photoGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes photoFloat{
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+    50%{
+        transform:translateY(-12px) scale(1.025);
+    }
+}
+
+@keyframes photoGlow{
+    from{
+        box-shadow:
+        0 15px 45px rgba(233,30,99,.2),
+        0 0 15px rgba(255,105,150,.25);
+    }
+    to{
+        box-shadow:
+        0 20px 55px rgba(233,30,99,.35),
+        0 0 35px rgba(255,105,150,.55);
+    }
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+    min-height:80vh;
+    padding:80px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.section h2{
+    font-size:42px;
+    color:#e91e63;
+    margin-bottom:25px;
+}
+
+.message{
+    max-width:750px;
+    background:rgba(255,255,255,.8);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:1000px;
+    width:100%;
+}
+
+.gallery img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+    border-radius:22px;
+    border:5px solid white;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+    animation:
+        galleryFloat 4s ease-in-out infinite,
+        galleryGlow 3s ease-in-out infinite alternate;
+}
+
+.gallery img:nth-child(2){
+    animation-delay:.7s;
+}
+
+.gallery img:nth-child(3){
+    animation-delay:1.4s;
+}
+
+@keyframes galleryFloat{
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+    50%{
+        transform:translateY(-10px) scale(1.035);
+    }
+}
+
+@keyframes galleryGlow{
+    from{
+        box-shadow:
+        0 10px 30px rgba(0,0,0,.12);
+    }
+    to{
+        box-shadow:
+        0 15px 40px rgba(233,30,99,.3),
+        0 0 20px rgba(255,105,150,.3);
+    }
+}
+
+/* ================= MUSIC ================= */
+
+.music-section{
+    min-height:55vh;
+}
+
+.music-player{
+    background:white;
+    width:min(500px,90vw);
+    padding:35px;
+    border-radius:30px;
+    box-shadow:
+        0 15px 45px rgba(233,30,99,.18),
+        0 0 25px rgba(255,105,150,.15);
+}
+
+.music-player h3{
+    color:#e91e63;
+    margin-bottom:20px;
+    font-size:25px;
+}
+
+.music-btn{
+    width:90px;
+    height:90px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,#e91e63,#ff6090);
+    color:white;
+    font-size:35px;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(233,30,99,.35);
+    transition:.3s;
+}
+
+.music-btn:hover{
+    transform:scale(1.08);
+}
+
+.music-playing .music-btn{
+    animation:musicPulse 1s infinite;
+}
+
+@keyframes musicPulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.12);
+        box-shadow:
+        0 0 30px rgba(233,30,99,.5);
+    }
+}
+
+.music-status{
+    margin-top:20px;
+    color:#777;
+}
+
+/* ================= PROPOSAL ================= */
+
+.proposal{
+    min-height:80vh;
+}
+
+.proposal-box{
+    background:white;
+    padding:50px 30px;
+    width:min(700px,92vw);
+    border-radius:30px;
+    box-shadow:0 15px 50px rgba(233,30,99,.15);
+}
+
+.proposal-box h2{
+    font-size:36px;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.yes-btn{
+    background:#e91e63;
+    color:white;
+    box-shadow:0 8px 20px rgba(233,30,99,.3);
+}
+
+.yes-btn:hover{
+    transform:scale(1.1);
+}
+
+.no-btn{
+    background:#eee;
+    color:#555;
+    position:relative;
+}
+
+/* ================= BEAT HEARTS ================= */
+
+.beat-heart{
+    position:fixed;
+    bottom:80px;
+    pointer-events:none;
+    z-index:9999;
+    font-size:25px;
+    animation:beatHeart 1.8s ease-out forwards;
+}
+
+@keyframes beatHeart{
+    0%{
+        opacity:0;
+        transform:translate(0,0) scale(.3);
+    }
+
+    15%{
+        opacity:1;
+        transform:translate(0,-20px) scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translate(var(--x),-250px)
+            rotate(var(--r))
+            scale(.7);
+    }
+}
+
+/* ================= YES HEARTS ================= */
+
+.yes-heart{
+    position:fixed;
+    bottom:0;
+    pointer-events:none;
+    z-index:9999;
+    font-size:28px;
+    animation:yesHeart 3s ease-out forwards;
+}
+
+@keyframes yesHeart{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(.5);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translate(var(--x),-100vh)
+            rotate(720deg)
+            scale(1.5);
+    }
+}
+
+/* ================= NO EFFECT ================= */
+
+.no-effect{
+    position:fixed;
+    pointer-events:none;
+    z-index:10000;
+    font-size:28px;
+    animation:noEffect 1.5s ease-out forwards;
+}
+
+@keyframes noEffect{
+    0%{
+        opacity:1;
+        transform:scale(.5);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translate(var(--x),-150px)
+            rotate(360deg)
+            scale(1.4);
+    }
+}
+
+.no-shake{
+    animation:noShake .4s;
+}
+
+@keyframes noShake{
+    0%,100%{
+        transform:translateX(0);
+    }
+
+    20%{
+        transform:translateX(-15px) rotate(-5deg);
+    }
+
+    40%{
+        transform:translateX(15px) rotate(5deg);
+    }
+
+    60%{
+        transform:translateX(-10px) rotate(-4deg);
+    }
+
+    80%{
+        transform:translateX(10px) rotate(4deg);
+    }
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+    background:#fff;
+    color:#888;
+    position:relative;
+    z-index:2;
+}
+
+footer strong{
+    color:#e91e63;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    .gallery{
+        grid-template-columns:1fr;
+        max-width:400px;
+    }
+
+    .gallery img{
+        height:420px;
+    }
+
+    .section h2{
+        font-size:32px;
+    }
+
+    .message{
+        padding:25px 20px;
+        font-size:16px;
+    }
+
+    .proposal-box{
+        padding:40px 20px;
+    }
+
+    .proposal-box h2{
+        font-size:28px;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .hero-photo{
+        width:280px;
+        height:360px;
+    }
+
+    .gallery img{
+        height:350px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- =========================
-         HERO
-    ========================= -->
+<!-- ================= HERO ================= -->
 
-    <section class="hero">
+<section class="hero">
 
-        <h1>Happy Birthday Shahnash Ayisha ❤️</h1>
+    <h1>Happy Birthday<br>Shahnash Ayisha ❤️</h1>
+
+    <p>
+        To the most beautiful person in my life 💕
+    </p>
+
+    <img
+        src="ASSETS/memory-2.jpg"
+        class="hero-photo"
+        alt="Shahnash Ayisha"
+    >
+
+</section>
+
+
+<!-- ================= MESSAGE ================= -->
+
+<section class="section">
+
+    <h2>My Birthday Wish For You 💖</h2>
+
+    <div class="message">
 
         <p>
-            To the most beautiful person in my life 💕
+            Happy Birthday my love ❤️
         </p>
+
+        <br>
+
+        <p>
+            You are not just someone special in my life...
+            You are the reason behind so many of my happiest moments. 💕
+        </p>
+
+        <br>
+
+        <p>
+            Every moment with you is a beautiful memory
+            that I want to keep forever. 🥰
+        </p>
+
+        <br>
+
+        <p>
+            I wish your life is always filled with happiness,
+            love, peace and endless smiles. ❤️
+        </p>
+
+        <br>
+
+        <p>
+            <strong>
+                Happy Birthday once again, my beautiful Shahnash Ayisha! 💍❤️
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MEMORIES ================= -->
+
+<section class="section">
+
+    <h2>Our Beautiful Memories 📸❤️</h2>
+
+    <div class="gallery">
+
+        <img
+            src="ASSETS/memory-1.jpg"
+            alt="Memory 1"
+        >
 
         <img
             src="ASSETS/memory-2.jpg"
-            alt="Shahnash Ayisha"
-            class="hero-image"
+            alt="Memory 2"
         >
 
-        <div style="margin-top:25px;">
+        <img
+            src="ASSETS/memory-3.jpg"
+            alt="Memory 3"
+        >
 
-            <button
-                class="btn music"
-                onclick="toggleVideo()"
-                id="musicButton"
-            >
-                🎵 Play Birthday Video
-            </button>
+    </div>
 
+</section>
+
+
+<!-- ================= MUSIC ================= -->
+
+<section class="section music-section">
+
+    <h2>Our Song 🎵❤️</h2>
+
+    <div class="music-player" id="musicPlayer">
+
+        <h3>🎵 ஏன் என்றால் உன் பிறந்தநாள்</h3>
+
+        <button
+            class="music-btn"
+            onclick="toggleMusic()"
+            id="musicButton"
+        >
+            ▶️
+        </button>
+
+        <div class="music-status" id="musicStatus">
+            Tap the button to play our song ❤️
         </div>
 
-    </section>
-
-
-    <!-- =========================
-         MEMORY GALLERY
-    ========================= -->
-
-    <section>
-
-        <h2>Our Beautiful Memories ❤️</h2>
-
-        <div class="gallery">
-
-            <img
-                src="ASSETS/memory-1.jpg"
-                alt="Our Memory 1"
+        <audio
+            id="birthdayMusic"
+            loop
+            preload="auto"
+        >
+            <source
+                src="ASSETS/Yen-Endral.mp3"
+                type="audio/mpeg"
             >
+        </audio>
 
-            <img
-                src="ASSETS/memory-2.jpg"
-                alt="Our Memory 2"
-            >
+    </div>
 
-            <img
-                src="ASSETS/memory-3.jpg"
-                alt="Our Memory 3"
-            >
-
-        </div>
-
-    </section>
+</section>
 
 
-    <!-- =========================
-         VIDEO
-    ========================= -->
+<!-- ================= PROPOSAL ================= -->
 
-    <section>
+<section class="section proposal">
 
-        <div class="video-section">
-
-            <h2>🎬 Our Special Video ❤️</h2>
-
-            <div class="video-box">
-
-                <video
-                    id="birthdayVideo"
-                    class="birthday-video"
-                    controls
-                    playsinline
-                    preload="metadata"
-                >
-
-                    <source
-                        src="ASSETS/birthday-video.mp4"
-                        type="video/mp4"
-                    >
-
-                    Your browser does not support HTML5 video.
-
-                </video>
-
-            </div>
-
-            <p class="video-caption">
-                Every moment with you is a beautiful memory. ❤️
-                <br>
-                Happy Birthday, my love! 🥰
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PROPOSAL
-    ========================= -->
-
-    <section class="proposal">
+    <div class="proposal-box">
 
         <h2>
-            Shahnash Ayisha,
-            <br>
-            Will You Be Mine Forever? 💍❤️
+            Shahnash Ayisha,<br>
+            will you be mine forever? 💍❤️
         </h2>
 
-        <p class="proposal-text">
-            I want to spend every beautiful moment of my life with you. ❤️
-        </p>
-
-        <div>
+        <div class="buttons">
 
             <button
-                class="btn yes"
+                class="btn yes-btn"
                 onclick="sayYes()"
             >
                 YES ❤️
             </button>
 
             <button
-                class="btn no"
+                class="btn no-btn"
                 id="noButton"
                 onclick="moveNo()"
             >
-                NO 😢
+                NO 😜
             </button>
 
         </div>
 
-        <div id="noMessage"></div>
+    </div>
 
-    </section>
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
-
-        Made with ❤️ specially for Shahnash Ayisha
-
-    </footer>
+</section>
 
 
-    <script>
+<!-- ================= FOOTER ================= -->
 
-        /* =========================
-           VIDEO PLAY / PAUSE
-        ========================= */
+<footer>
 
-        function toggleVideo() {
+    Made with ❤️ only for
+    <strong>Shahnash Ayisha</strong>
 
-            const video =
-                document.getElementById("birthdayVideo");
+    <br><br>
 
-            const button =
-                document.getElementById("musicButton");
+    Forever & Always 💍❤️
 
-            if (video.paused) {
-
-                video.play();
-
-                button.innerHTML =
-                    "⏸️ Pause Birthday Video";
-
-                video.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
-
-            } else {
-
-                video.pause();
-
-                button.innerHTML =
-                    "🎵 Play Birthday Video";
-            }
-        }
+</footer>
 
 
-        /* =========================
-           VIDEO BUTTON UPDATE
-        ========================= */
+<script>
 
-        const birthdayVideo =
-            document.getElementById("birthdayVideo");
+/* ==================================================
+   MUSIC
+================================================== */
 
-        birthdayVideo.addEventListener("play", function() {
+const music = document.getElementById("birthdayMusic");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+const musicPlayer = document.getElementById("musicPlayer");
 
-            document.getElementById("musicButton").innerHTML =
-                "⏸️ Pause Birthday Video";
+let musicPlaying = false;
+let beatInterval = null;
+
+
+/* PLAY / PAUSE */
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play()
+        .then(() => {
+
+            musicPlaying = true;
+
+            musicButton.innerHTML = "⏸️";
+
+            musicStatus.innerHTML =
+                "🎵 Playing... ❤️";
+
+            musicPlayer.classList.add("music-playing");
+
+            startBeatHearts();
+
+        })
+        .catch(() => {
+
+            musicStatus.innerHTML =
+                "Please tap the play button again 🎵";
 
         });
 
-        birthdayVideo.addEventListener("pause", function() {
+    }else{
 
-            document.getElementById("musicButton").innerHTML =
-                "🎵 Play Birthday Video";
+        music.pause();
 
-        });
+        musicPlaying = false;
 
+        musicButton.innerHTML = "▶️";
 
-        /* =========================
-           YES BUTTON
-        ========================= */
+        musicStatus.innerHTML =
+            "Paused ⏸️";
 
-        function sayYes() {
+        musicPlayer.classList.remove("music-playing");
 
-            const message =
-                document.getElementById("noMessage");
+        stopBeatHearts();
 
-            message.innerHTML =
-                "Yayyy! ❤️ I Love You So Much! 🥰💍❤️";
+    }
 
-            createHearts();
-
-            for (let i = 0; i < 30; i++) {
-
-                setTimeout(() => {
-                    createHeart();
-                }, i * 100);
-
-            }
-
-        }
+}
 
 
-        /* =========================
-           NO BUTTON EFFECT
-        ========================= */
+/* ==================================================
+   HEARTS ON MUSIC BEAT
+================================================== */
 
-        function moveNo() {
+function startBeatHearts(){
 
-            const button =
-                document.getElementById("noButton");
+    stopBeatHearts();
 
-            const message =
-                document.getElementById("noMessage");
+    createBeatBurst();
 
-            button.classList.remove("no-shake");
+    /*
+       Approximate beat effect.
+       Hearts appear continuously while song plays.
+    */
 
-            void button.offsetWidth;
+    beatInterval = setInterval(() => {
 
-            button.classList.add("no-shake");
+        if(!music.paused){
 
-            const messages = [
-
-                "No button work aagadhu 😜❤️",
-
-                "Please Yes sollu 🥺❤️",
-
-                "Don't break my heart 💔🥺",
-
-                "One more chance please 😭❤️",
-
-                "YES button dhaan correct 😍",
-
-                "You can't escape from me 😜❤️"
-
-            ];
-
-            const random =
-                Math.floor(Math.random() * messages.length);
-
-            message.innerHTML =
-                messages[random];
-
-            /* Move button */
-
-            setTimeout(() => {
-
-                const maxX =
-                    Math.max(
-                        20,
-                        window.innerWidth - button.offsetWidth - 40
-                    );
-
-                const maxY =
-                    Math.max(
-                        20,
-                        window.innerHeight - button.offsetHeight - 40
-                    );
-
-                const x =
-                    Math.random() * maxX - (maxX / 2);
-
-                const y =
-                    Math.random() * maxY - (maxY / 2);
-
-                button.style.transform =
-                    `translate(${x}px, ${y}px)`;
-
-            }, 300);
-
-            /* Broken hearts */
-
-            for (let i = 0; i < 8; i++) {
-
-                setTimeout(() => {
-
-                    const heart =
-                        document.createElement("div");
-
-                    heart.innerHTML =
-                        Math.random() > 0.5
-                        ? "💔"
-                        : "😭";
-
-                    heart.className =
-                        "heart";
-
-                    heart.style.left =
-                        Math.random() * 100 + "vw";
-
-                    heart.style.top =
-                        "50vh";
-
-                    heart.style.fontSize =
-                        (20 + Math.random() * 20) + "px";
-
-                    document.body.appendChild(heart);
-
-                    setTimeout(() => {
-                        heart.remove();
-                    }, 4000);
-
-                }, i * 100);
-
-            }
+            createBeatBurst();
 
         }
 
+    },700);
 
-        /* =========================
-           HEARTS
-        ========================= */
+}
 
-        function createHeart() {
+
+function stopBeatHearts(){
+
+    if(beatInterval){
+
+        clearInterval(beatInterval);
+
+        beatInterval = null;
+
+    }
+
+}
+
+
+/* CREATE HEART BURST */
+
+function createBeatBurst(){
+
+    const hearts = [
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💓"
+    ];
+
+    for(let i = 0; i < 7; i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "beat-heart";
+
+        heart.innerHTML =
+            hearts[Math.floor(Math.random()*hearts.length)];
+
+        heart.style.left =
+            (10 + Math.random()*80) + "%";
+
+        heart.style.setProperty(
+            "--x",
+            (Math.random()*240 - 120) + "px"
+        );
+
+        heart.style.setProperty(
+            "--r",
+            (Math.random()*360) + "deg"
+        );
+
+        heart.style.animationDuration =
+            (1.3 + Math.random()*1.3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        },3000);
+
+    }
+
+}
+
+
+/* ==================================================
+   YES BUTTON
+================================================== */
+
+function sayYes(){
+
+    const messages = [
+        "I knew it! ❤️",
+        "You are my forever! 💍❤️",
+        "Love you so much! 🥰",
+        "Forever together! 💕",
+        "Best YES ever! 😍"
+    ];
+
+    alert(
+        messages[
+            Math.floor(Math.random()*messages.length)
+        ]
+    );
+
+    createYesHearts(60);
+
+}
+
+
+/* YES HEART EXPLOSION */
+
+function createYesHearts(count){
+
+    const hearts = [
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💓",
+        "💘",
+        "🥰"
+    ];
+
+    for(let i = 0; i < count; i++){
+
+        setTimeout(() => {
 
             const heart =
                 document.createElement("div");
 
-            heart.className =
-                "heart";
+            heart.className = "yes-heart";
 
             heart.innerHTML =
-                Math.random() > 0.3
-                ? "❤️"
-                : "💖";
+                hearts[
+                    Math.floor(Math.random()*hearts.length)
+                ];
 
             heart.style.left =
-                Math.random() * 100 + "vw";
+                (Math.random()*100) + "%";
 
-            heart.style.top =
-                "-30px";
+            heart.style.setProperty(
+                "--x",
+                (Math.random()*500 - 250) + "px"
+            );
 
-            heart.style.fontSize =
-                (20 + Math.random() * 25) + "px";
+            heart.style.animationDuration =
+                (2 + Math.random()*2) + "s";
 
             document.body.appendChild(heart);
 
@@ -790,38 +904,219 @@
 
                 heart.remove();
 
-            }, 4000);
+            },4000);
 
-        }
+        },i*35);
 
+    }
 
-        function createHearts() {
-
-            for (let i = 0; i < 20; i++) {
-
-                setTimeout(() => {
-
-                    createHeart();
-
-                }, i * 150);
-
-            }
-
-        }
+}
 
 
-        /* =========================
-           BACKGROUND HEARTS
-        ========================= */
+/* ==================================================
+   NO BUTTON
+================================================== */
 
-        setInterval(() => {
+const noMessages = [
 
-            createHeart();
+    "Are you sure? 😭",
 
-        }, 2500);
+    "Please don't say NO 🥺",
 
-    </script>
+    "Think again 😜",
+
+    "NO is not allowed! 😂",
+
+    "Try YES ❤️",
+
+    "You can't escape me 😎❤️",
+
+    "Pleaseeee 🥹",
+
+    "Wrong button 😜",
+
+    "Only YES works! 💕"
+
+];
+
+
+function moveNo(){
+
+    const button =
+        document.getElementById("noButton");
+
+    /* SHAKE */
+
+    button.classList.remove("no-shake");
+
+    void button.offsetWidth;
+
+    button.classList.add("no-shake");
+
+
+    /* RANDOM POSITION */
+
+    const maxX =
+        Math.min(
+            window.innerWidth - 130,
+            300
+        );
+
+    const maxY =
+        Math.min(
+            window.innerHeight - 100,
+            250
+        );
+
+    const x =
+        Math.random()*maxX - maxX/2;
+
+    const y =
+        Math.random()*maxY - maxY/2;
+
+
+    button.style.transform =
+        `translate(${x}px,${y}px)`;
+
+
+    /* MESSAGE */
+
+    const message =
+        noMessages[
+            Math.floor(Math.random()*noMessages.length)
+        ];
+
+    setTimeout(() => {
+
+        alert(message);
+
+    },150);
+
+
+    /* BROKEN HEART EFFECT */
+
+    createNoEffects(10);
+
+}
+
+
+/* NO EFFECTS */
+
+function createNoEffects(count){
+
+    const emojis = [
+        "💔",
+        "😭",
+        "🥺",
+        "💔",
+        "😢"
+    ];
+
+    for(let i = 0; i < count; i++){
+
+        setTimeout(() => {
+
+            const effect =
+                document.createElement("div");
+
+            effect.className =
+                "no-effect";
+
+            effect.innerHTML =
+                emojis[
+                    Math.floor(Math.random()*emojis.length)
+                ];
+
+            effect.style.left =
+                (40 + Math.random()*20) + "%";
+
+            effect.style.bottom =
+                "100px";
+
+            effect.style.setProperty(
+                "--x",
+                (Math.random()*300 - 150) + "px"
+            );
+
+            document.body.appendChild(effect);
+
+            setTimeout(() => {
+
+                effect.remove();
+
+            },1600);
+
+        },i*80);
+
+    }
+
+}
+
+
+/* ==================================================
+   BACKGROUND HEARTS
+================================================== */
+
+function createBackgroundHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "bg-heart";
+
+    const hearts = [
+        "❤️",
+        "💖",
+        "💕",
+        "💗"
+    ];
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(Math.random()*hearts.length)
+        ];
+
+    heart.style.left =
+        Math.random()*100 + "%";
+
+    heart.style.fontSize =
+        (15 + Math.random()*25) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random()*5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    },10000);
+
+}
+
+
+/* CREATE BACKGROUND HEART EVERY 2.5 SEC */
+
+setInterval(
+    createBackgroundHeart,
+    2500
+);
+
+
+/* INITIAL HEARTS */
+
+for(let i = 0; i < 5; i++){
+
+    setTimeout(
+        createBackgroundHeart,
+        i*500
+    );
+
+}
+
+</script>
 
 </body>
 </html>
-```
